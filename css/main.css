@@ -248,13 +248,13 @@ main#home h1 {
     grid-area: job1;
 }
 
-.about-info .job-2 {
+/*.about-info .job-2 {
     grid-area: job2;
 }
 
 .about-info .job-3 {
     grid-area: job3;
-}
+}*/
 
 .about-info h3,
 h5,
