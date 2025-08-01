@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>About Me</title>
-    <style>
+     <style>
     body {
       margin: 0;
       padding: 0;
@@ -59,9 +59,9 @@
     .bio {
       max-width: 800px;
       line-height: 1.7;
-      font-size: 0.5rem;
-      background: #0b0c10;
-      padding: 1rem;
+      font-size: 1rem;
+      background: #1e1e1e;
+      padding: 1.5rem;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(94, 234, 212, 0.3);
     }
@@ -73,7 +73,7 @@
 
     .job {
       max-width: 800px;
-      background: #0b0c10
+      background: #1e1e1e;
       padding: 1.5rem;
       border-radius: 15px;
       line-height: 1.6;
@@ -87,7 +87,7 @@
     }
 
     .job h4 {
-      color: #5eead4;
+      color: #a2d2ff;
       margin-top: 1.5rem;
     }
 
@@ -99,54 +99,80 @@
       color: #5eead4;
       font-size: 0.9rem;
     }
+
+    .menu-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .btn-line {
+      width: 100%;
+      height: 4px;
+      background-color: #5eead4;
+      transition: all 0.3s ease;
+    }
+
+    .menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background-color: #0b0c10;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .menu.show {
+      transform: translateX(0);
+    }
+
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu a {
+      color: #5eead4;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
   </style>
 </head>
-</head>
-
 <body>
-    <header>
-        <div class="menu-btn">
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
-        </div>
+  <button class="menu-btn">
+    <div class="btn-line"></div>
+    <div class="btn-line"></div>
+    <div class="btn-line"></div>
+  </button>
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-        <nav class="menu">
-            <div class="menu-branding">
-                <div class="portrait"></div>
-            </div>
-            <ul class="menu-nav">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">
-              Home
-            </a>
-                </li>
-                <li class="nav-item current">
-                    <a href="about.html" class="nav-link">
-              About Me
-            </a>
-                </li>
-                <li class="nav-item">
-                    <a href="work.html" class="nav-link">
-              Projects
-            </a>
-                </li>
-                <li class="nav-item">
-                    <a href="resume.html" class="nav-link">
-              Resume
-            </a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">
-              Contact Me
-            </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
-  
   <section id="about">
     <h1 class="lg-heading">About Me</h1>
     <p class="sm-heading">Few things about me...</p>
@@ -162,7 +188,7 @@
       </div>
 
       <div class="job">
-        <h3>Experiences</h3>
+        <h3>Technical Positions of Responsibility</h3>
         <h4>Horizontal Digital – QA Engineer (Jan 2024 – Present)</h4>
         <ul>
           <li>Conduct cross-browser and UI testing for enterprise websites built with Sitecore CMS.</li>
@@ -194,25 +220,22 @@
     Copyright © 2025
   </footer>
 
-  <!-- Optional JavaScript (for animations or future additions) -->
   <script>
-  // Toggle mobile menu
-  const menuBtn = document.querySelector('.menu-btn');
-  const menu = document.querySelector('.menu');
-  let showMenu = false;
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('.menu');
+    let showMenu = false;
 
-  menuBtn.addEventListener('click', () => {
-    if (!showMenu) {
-      menuBtn.classList.add('close');
-      menu.classList.add('show');
-      showMenu = true;
-    } else {
-      menuBtn.classList.remove('close');
-      menu.classList.remove('show');
-      showMenu = false;
-    }
-  });
-</script>
-
+    menuBtn.addEventListener('click', () => {
+      if (!showMenu) {
+        menuBtn.classList.add('close');
+        menu.classList.add('show');
+        showMenu = true;
+      } else {
+        menuBtn.classList.remove('close');
+        menu.classList.remove('show');
+        showMenu = false;
+      }
+    });
+  </script>
 </body>
 </html>
