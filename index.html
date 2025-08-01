@@ -68,8 +68,21 @@ SSSssshhhhh!! The code starts below, Enjoy!!! -->
     <title>Nida Mirza</title>
 </head>
 
- <style>  
-   .menu-btn {
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b0c10;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .menu-btn {
       position: fixed;
       top: 1rem;
       right: 1rem;
@@ -86,9 +99,21 @@ SSSssshhhhh!! The code starts below, Enjoy!!! -->
 
     .btn-line {
       width: 100%;
-      height: 4px;
+      height: 3px;
       background-color: #5eead4;
       transition: all 0.3s ease;
+    }
+
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
     .menu {
@@ -112,31 +137,91 @@ SSSssshhhhh!! The code starts below, Enjoy!!! -->
       transform: translateX(0);
     }
 
-    .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-btn.close .btn-line:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
     .menu a {
       color: #5eead4;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: bold;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .menu a:hover {
+      color: #ffffff;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .lg-heading {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .text-secondary {
+      color: #5eead4;
+    }
+
+    .heading {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    .icons {
+      margin-top: 2rem;
+    }
+
+    .icons a {
+      margin: 0 1rem;
+      color: #5eead4;
+      transition: color 0.3s ease;
+    }
+
+    .icons a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      .lg-heading {
+        font-size: 2.5rem;
+      }
+
+      .heading {
+        font-size: 1.2rem;
+      }
+
+      .menu a {
+        font-size: 1.5rem;
+      }
     }
   </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C85DBQ6B60"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LVP7J1E58E');
+  </script>
 </head>
+
 <body>
-  <button class="menu-btn">
-    <div class="btn-line"></div>
+  <!-- Toggle Button -->
+  <button class="menu-btn" id="menu-btn" aria-label="Toggle Menu">
     <div class="btn-line"></div>
     <div class="btn-line"></div>
     <div class="btn-line"></div>
   </button>
-  <nav class="menu">
+
+  <!-- Navigation Menu -->
+  <nav class="menu" id="menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="work.html">Projects</a>
@@ -144,29 +229,35 @@ SSSssshhhhh!! The code starts below, Enjoy!!! -->
     <a href="contact.html">Contact</a>
   </nav>
 
-    <main id="home">
-        <h1 class="lg-heading anmtn" data-aos="zoom-in-up" data-aos-delay="300">
-            Nida
-            <span class="text-secondary">Mirza</span>
-        </h1>
+  <!-- Main Content -->
+  <main id="home">
+    <h1 class="lg-heading" data-aos="zoom-in-up" data-aos-delay="300">
+      Nida <span class="text-secondary">Mirza</span>
+    </h1>
+    <h2 class="heading" data-aos="zoom-in-up" data-aos-delay="500">
+      – Software Tester (QA)
+    </h2>
 
-        <h2 class="heading" data-aos="zoom-in-up" data-aos-delay="500">
-            - Software Tester(QA)
-        </h2>
-        <div class="icons" data-aos="zoom-in-up" data-aos-delay="700">
-            <a href="https://www.linkedin.com/in/nida-mirza/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a href="https://github.com/nidamirza9" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github fa-2x"></i>
-            </a>
-            <a href="mailto:mirzanida58@gmail.com" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-envelope fa-2x"></i>
-            </a>
-        </div>
-    </main>
+    <div class="icons" data-aos="zoom-in-up" data-aos-delay="700">
+      <a href="https://www.linkedin.com/in/nida-mirza/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="https://github.com/nidamirza9" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+      <a href="mailto:mirzanida58@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x"></i></a>
+    </div>
+  </main>
 
-    <script src="js/main.js"></script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+      menuBtn.classList.toggle('close');
+    });
+  </script>
+     
 </body>
-
 </html>
+
+
