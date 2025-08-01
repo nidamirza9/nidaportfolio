@@ -274,7 +274,7 @@ h4 {
 }
 
 .about-info .job:hover {
-    transform: scale(1);
+    transform: scale(1.1);
     transition: 0.8s;
 }
 
