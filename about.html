@@ -12,25 +12,83 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>About Me</title>
-     <style>
+    <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #121212;
       font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
       color: #ffffff;
     }
 
+    .menu-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1001;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .btn-line {
+      width: 30px;
+      height: 4px;
+      background-color: #5eead4;
+      transition: 0.3s ease;
+    }
+
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #0b0c10;
+      width: 100%;
+      height: 100vh;
+      transform: translateX(-100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+
+    .menu.show {
+      transform: translateX(0);
+    }
+
+    .menu a {
+      color: #5eead4;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+
     #about {
-      padding: 2rem;
       max-width: 1000px;
       margin: auto;
+      padding: 2rem;
     }
 
     .lg-heading {
       font-size: 3rem;
       text-align: center;
-      margin-bottom: 0.5rem;
       color: #5eead4;
     }
 
@@ -51,39 +109,23 @@
     .bio-image {
       width: 150px;
       height: 150px;
-      border-radius: 50%;
       object-fit: cover;
+      border-radius: 50%;
       border: 4px solid #5eead4;
     }
 
-    .bio {
-      max-width: 800px;
-      line-height: 1.7;
-      font-size: 1rem;
+    .bio, .job {
       background: #1e1e1e;
       padding: 1.5rem;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(94, 234, 212, 0.3);
-    }
-
-    .bio h3 {
-      color: #5eead4;
-      margin-bottom: 0.5rem;
-    }
-
-    .job {
       max-width: 800px;
-      background: #1e1e1e;
-      padding: 1.5rem;
-      border-radius: 15px;
-      line-height: 1.6;
-      box-shadow: 0 0 15px rgba(94, 234, 212, 0.3);
+      width: 100%;
     }
 
-    .job h3 {
-      font-size: 1.5rem;
+    .bio h3, .job h3 {
       color: #5eead4;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .job h4 {
@@ -93,81 +135,34 @@
 
     #main-footer {
       text-align: center;
-      margin-top: 3rem;
       padding: 1rem;
+      margin-top: 3rem;
       background-color: #000;
       color: #5eead4;
-      font-size: 0.9rem;
     }
 
-    .menu-btn {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 25px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1001;
+    ul {
+      padding-left: 1.5rem;
     }
 
-    .btn-line {
-      width: 100%;
-      height: 4px;
-      background-color: #5eead4;
-      transition: all 0.3s ease;
-    }
-
-    .menu {
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      background-color: #0b0c10;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .menu.show {
-      transform: translateX(0);
-    }
-
-    .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-btn.close .btn-line:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .menu a {
-      color: #5eead4;
-      font-size: 1.5rem;
-      text-decoration: none;
+    @media (min-width: 768px) {
+      .about-info {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
+
 <body>
-  <button class="menu-btn">
-    <div class="btn-line"></div>
+  <!-- Toggle Menu Button -->
+  <button class="menu-btn" aria-label="Toggle Navigation">
     <div class="btn-line"></div>
     <div class="btn-line"></div>
     <div class="btn-line"></div>
   </button>
-  <nav class="menu">
+
+  <!-- Navigation Menu -->
+  <nav class="menu" role="navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="work.html">Projects</a>
@@ -175,68 +170,62 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- About Section -->
   <section id="about">
     <h1 class="lg-heading">About Me</h1>
     <p class="sm-heading">Few things about me...</p>
 
     <div class="about-info">
-      <img src="img/projects/Nida - DP.jpg" alt="Nida Mirza" class="bio-image" />
+      <img src="img/projects/Nida - DP.jpg" alt="Nida Mirza Headshot" class="bio-image" />
 
       <div class="bio">
         <h3>BIO</h3>
         <p>
-          Results-driven QA Engineer with 3+ years of hands-on experience in manual testing, SDLC/STLC processes, and Sitecore-based web platforms. ISTQB certified and highly skilled in functional, UI/UX, regression, cross-browser, and accessibility testing. Adept at working in Agile environments, collaborating with global stakeholders, and driving quality improvements across releases. Passionate about continuous learning—currently exploring Generative AI applications in testing and expanding automation expertise with Selenium and TestNG. Known for sharp attention to detail, proactive defect identification, and mentoring aspiring QA professionals.
+          Results-driven QA Engineer with 3+ years of hands-on experience in manual testing, SDLC/STLC processes, and Sitecore-based web platforms. ISTQB certified and highly skilled in functional, UI/UX, regression, cross-browser, and accessibility testing.
+          Passionate about continuous learning—currently exploring Generative AI and expanding automation expertise with Selenium and TestNG.
         </p>
       </div>
 
       <div class="job">
         <h3>Technical Positions of Responsibility</h3>
+
         <h4>Horizontal Digital – QA Engineer (Jan 2024 – Present)</h4>
         <ul>
-          <li>Conduct cross-browser and UI testing for enterprise websites built with Sitecore CMS.</li>
-          <li>Participate in Agile ceremonies and collaborate with global teams to clarify requirements and ensure high-quality releases.</li>
-          <li>Conduct A/B testing to improve CRO and user engagement.</li>
-          <li>Recognized for attention to detail and consistent bug reporting accuracy.</li>
-          <li>Initiated learning in automation testing with Selenium, TestNG, and Maven.</li>
-          <li>Mentored junior testers and ISTQB aspirants, organizing training and SME coordination.</li>
+          <li>Cross-browser testing for Sitecore CMS-based enterprise websites.</li>
+          <li>Active collaboration in Agile ceremonies and releases.</li>
+          <li>Executed A/B testing and CRO improvements.</li>
+          <li>Learning Selenium, TestNG, and mentoring juniors.</li>
         </ul>
 
-        <h4>Horizontal Digital – Associate QA Engineer (Jun 2022 – Dec 2023)</h4>
+        <h4>Associate QA Engineer (Jun 2022 – Dec 2023)</h4>
         <ul>
-          <li>Executed manual testing (functional, UI, regression, and cross-platform) for banking projects.</li>
-          <li>Designed detailed test cases, reported defects using JIRA, and tracked resolutions.</li>
-          <li>Conducted accessibility testing and contributed to website personalization strategies.</li>
-          <li>Improved bug discovery and resolution timelines by standardizing test documentation.</li>
+          <li>Functional and cross-platform manual testing for banking projects.</li>
+          <li>Bug tracking and reporting via JIRA.</li>
+          <li>Improved accessibility testing and test documentation.</li>
         </ul>
 
-        <h4>Horizontal Digital – QA Intern (Jan 2022 – Jun 2022)</h4>
+        <h4>QA Intern (Jan 2022 – Jun 2022)</h4>
         <ul>
-          <li>Gained proficiency in software testing processes, JIRA, Confluence, and QMetry.</li>
-          <li>Completed Sitecore CMS training and supported a training portal project with manual testing.</li>
+          <li>Trained in testing processes, JIRA, and Sitecore CMS.</li>
+          <li>Supported internal project QA and defect validation.</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer id="main-footer">
-    Copyright © 2025
+    &copy; 2025 Nida Mirza
   </footer>
 
+  <!-- Toggle Script -->
   <script>
     const menuBtn = document.querySelector('.menu-btn');
     const menu = document.querySelector('.menu');
-    let showMenu = false;
 
     menuBtn.addEventListener('click', () => {
-      if (!showMenu) {
-        menuBtn.classList.add('close');
-        menu.classList.add('show');
-        showMenu = true;
-      } else {
-        menuBtn.classList.remove('close');
-        menu.classList.remove('show');
-        showMenu = false;
-      }
+      menuBtn.classList.toggle('close');
+      menu.classList.toggle('show');
     });
   </script>
 </body>
