@@ -523,6 +523,35 @@ h4 {
     }
 }
 
+/* Toggle Menu Visibility */
+.menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #0b0c10;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.menu.show {
+  transform: translateX(0);
+}
+
+/* Hamburger Button Appearance When Open */
+.menu-btn.close .btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.close .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
 @media screen and (max-width: 500px) {
     main {
         padding: 2rem;
