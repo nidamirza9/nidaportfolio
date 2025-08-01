@@ -12,15 +12,151 @@
     <title>Projects</title>
 </head>
 
-<body>
+ <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
 
-       <body>
-  <button class="menu-btn">
+    .lg-heading {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    .text-secondary {
+      color: #00bcd4;
+    }
+
+    .sm-heading {
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: #777;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .item {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .item:hover {
+      transform: translateY(-5px);
+    }
+
+    .item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .btn-light,
+    .btn-dark {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-light {
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .btn-dark {
+      background: #00bcd4;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #0097a7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .btn-line {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      margin: 4px 0;
+    }
+
+    nav.menu {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.2rem 0;
+      background: #fff;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    nav.menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav.menu a:hover {
+      color: #00bcd4;
+    }
+
+    @media (max-width: 768px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      nav.menu {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button class="menu-btn" aria-label="Toggle menu">
     <div class="btn-line"></div>
     <div class="btn-line"></div>
     <div class="btn-line"></div>
     <div class="btn-line"></div>
   </button>
+
   <nav class="menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -29,103 +165,65 @@
     <a href="contact.html">Contact</a>
   </nav>
 
- 
+  <main id="work">
+    <h1 class="lg-heading">
+      My <span class="text-secondary">Projects</span>
+    </h1>
+    <h2 class="sm-heading">Check out some of my creations...</h2>
 
-    <main id="work">
-        <h1 class="lg-heading">
-            My
-            <span class="text-secondary">Project Work</span>
-        </h1>
-        <h2 class="sm-heading">
-            Check out some of my creations...
-        </h2>
-        <div class="projects centerElm">
-            <div class="item" data-aos="zoom-in-up" data-aos-delay="100">
-                <a href="#!">
-                    <img src="img/projects/Dice.jpg" alt="Dicee game" />
-                </a>
-                <a href="#" class="btn-light">
-                    <i class="fas fa-eye"></i>Dicee Game
-                </a>
-                <a href="https://nidamirza9.github.io/Dicee_Game_Website/" class="btn-dark">
-             View Application 
-          </a>
-            </div>
-            <div class="item" data-aos="zoom-in-up" data-aos-delay="300">
-                <a href="#!">
-                    <img src="img/projects/project4.jpg" alt="QuizAppC" />
-                </a>
-                <a href="#" class="btn-light">
-                    <i class="fas fa-eye"></i>QuizAppC
-                </a>
-                <a href="https://nidamirza9.github.io/QuizAppC/" class="btn-dark">
-            View Output
-          </a>
-            </div>
-            <div class="item" data-aos="zoom-in-up" data-aos-delay="500">
-                <a href="#!">
-                    <img src="img/projects/Dog1.jpg" alt="Project" />
-                </a>
-                <a href="#" class="btn-light">
-                    <i class="fas fa-eye"></i>TinDog Website
-                </a>
-                <a href="https://nidamirza9.github.io/TinDog_Website/" class="btn-dark">
-                    <i class="fab fa-github"></i> Github
-                </a>
-            </div>
-            <div class="item" data-aos="zoom-in-up" data-aos-delay="700">
-                <a href="#!">
-                    <img src="img/projects/d1.jpeg" alt="Project" />
-                </a>
-                <a href="https://nidamirza9.github.io/Drum_kit_website/" class="btn-light">
-                    <i class="fas fa-eye"></i>Drum kit Website
-                </a>
-                <a href="#" class="btn-dark">
-                    <i class="fab fa-github"></i> Github
-                </a>
-            </div>
-            <div class="item" data-aos="zoom-in-up" data-aos-delay="900">
-                <a href="https://nidamirza9.github.io/Harry_potter_Search/">
-                    <img src="img/Harry.jpg" alt="Project" />
-                </a>
-                <a href="#" class="btn-light">
-                    <i class="fas fa-eye"></i>Harry potter character finder
-                </a>
-                <a href="https://nidamirza9.github.io/Harry_potter_Search/" class="btn-dark">
-            View Application
-          </a>
-            </div>
-            <div class="item" data-aos="zoom-in-up" data-aos-delay="1100">
-                <a href="https://nidamirza9.github.io/Static_search_website/">
-                    <img src="img/projects/project5.jpg" alt="Project" />
-                </a>
-                <a href="#" class="btn-light">
-                    <i class="fas fa-eye"></i>Static Serach Website
-                </a>
-                <a href="#" class="btn-dark">
-                    <i class="fab fa-github"></i> Github
-                </a>
-            </div>
+    <div class="projects">
+      <div class="item" data-aos="fade-up" data-aos-delay="100">
+        <img src="img/projects/Dice.jpg" alt="Dicee game" />
+        <a href="#" class="btn-light"><i class="fas fa-eye"></i> Dicee Game</a>
+        <a href="https://nidamirza9.github.io/Dicee_Game_Website/" class="btn-dark">View App</a>
+      </div>
 
-            <div class="item" data-aos="zoom-in-up" data-aos-delay="1300">
-                <a href="https://github.com/nidamirza9/WT">
-                    <img src="img/projects/9.jpeg" alt="Project" />
-                </a>
-                <a href="#" class="btn-light">
-                    <i class="fas fa-eye"></i>Web Programming
-                </a>
-                <a href="#" class="btn-dark">
-                    <i class="fab fa-github"></i> Github
-                </a>
-            </div>
-        </div>
-    </main>
+      <div class="item" data-aos="fade-up" data-aos-delay="200">
+        <img src="img/projects/project4.jpg" alt="QuizAppC" />
+        <a href="#" class="btn-light"><i class="fas fa-eye"></i> QuizAppC</a>
+        <a href="https://nidamirza9.github.io/QuizAppC/" class="btn-dark">View Output</a>
+      </div>
 
-    <footer id="main-footer">
-        Copyright &copy; 2021
-    </footer>
+      <div class="item" data-aos="fade-up" data-aos-delay="300">
+        <img src="img/projects/Dog1.jpg" alt="TinDog Website" />
+        <a href="#" class="btn-light"><i class="fas fa-eye"></i> TinDog</a>
+        <a href="https://nidamirza9.github.io/TinDog_Website/" class="btn-dark">GitHub</a>
+      </div>
 
-    <script src="js/main.js"></script>
+      <div class="item" data-aos="fade-up" data-aos-delay="400">
+        <img src="img/projects/d1.jpeg" alt="Drum kit Website" />
+        <a href="#" class="btn-light"><i class="fas fa-eye"></i> Drum Kit</a>
+        <a href="https://nidamirza9.github.io/Drum_kit_website/" class="btn-dark">GitHub</a>
+      </div>
+
+      <div class="item" data-aos="fade-up" data-aos-delay="500">
+        <img src="img/Harry.jpg" alt="Harry Potter Search" />
+        <a href="#" class="btn-light"><i class="fas fa-eye"></i> HP Character Finder</a>
+        <a href="https://nidamirza9.github.io/Harry_potter_Search/" class="btn-dark">View App</a>
+      </div>
+
+      <div class="item" data-aos="fade-up" data-aos-delay="600">
+        <img src="img/projects/project5.jpg" alt="Static Search" />
+        <a href="#" class="btn-light"><i class="fas fa-eye"></i> Static Search</a>
+        <a href="https://nidamirza9.github.io/Static_search_website/" class="btn-dark">GitHub</a>
+      </div>
+
+      <div class="item" data-aos="fade-up" data-aos-delay="700">
+        <img src="img/projects/9.jpeg" alt="Web Programming" />
+        <a href="#" class="btn-light"><i class="fas fa-eye"></i> Web Programming</a>
+        <a href="https://github.com/nidamirza9/WT" class="btn-dark">GitHub</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Copyright &copy; 2025 Nida Mirza
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
 </body>
 
 </html>
