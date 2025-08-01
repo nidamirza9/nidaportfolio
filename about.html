@@ -196,10 +196,23 @@
 
   <!-- Optional JavaScript (for animations or future additions) -->
   <script>
-    // Example: Scroll animation or future interactivity
-    window.addEventListener('scroll', () => {
-      // Add scroll-based interactions here if needed
-    });
-  </script>
+  // Toggle mobile menu
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.querySelector('.menu');
+  let showMenu = false;
+
+  menuBtn.addEventListener('click', () => {
+    if (!showMenu) {
+      menuBtn.classList.add('close');
+      menu.classList.add('show');
+      showMenu = true;
+    } else {
+      menuBtn.classList.remove('close');
+      menu.classList.remove('show');
+      showMenu = false;
+    }
+  });
+</script>
+
 </body>
 </html>
