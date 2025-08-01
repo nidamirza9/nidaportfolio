@@ -8,6 +8,24 @@ const navItems = document.querySelectorAll('.nav-item');
 // Set Initial State Of Menu
 let showMenu = false;
 
+
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('.menu');
+    let showMenu = false;
+
+    menuBtn.addEventListener('click', () => {
+      if (!showMenu) {
+        menuBtn.classList.add('close');
+        menu.classList.add('show');
+        showMenu = true;
+      } else {
+        menuBtn.classList.remove('close');
+        menu.classList.remove('show');
+        showMenu = false;
+      }
+    });
+
+
 menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
