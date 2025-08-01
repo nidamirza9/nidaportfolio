@@ -12,36 +12,12 @@
     <title>Projects</title>
 </head>
 
-   <style>
+  <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #f8f9fa;
+      background: #f0f0f0;
       color: #333;
-    }
-
-    header {
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    nav.menu {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1.2rem 0;
-      flex-wrap: wrap;
-    }
-
-    nav.menu a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav.menu a:hover {
-      color: #00bcd4;
     }
 
     .lg-heading {
@@ -58,7 +34,7 @@
     .sm-heading {
       text-align: center;
       font-weight: 400;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       color: #777;
     }
 
@@ -94,7 +70,7 @@
     .btn-dark {
       display: inline-block;
       margin: 0.5rem;
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
@@ -117,100 +93,150 @@
 
     footer {
       text-align: center;
-      padding: 1.2rem;
+      padding: 1rem;
       background: #222;
       color: white;
       margin-top: 2rem;
     }
 
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      cursor: pointer;
+      display: none;
+    }
+
+    .btn-line {
+      width: 30px;
+      height: 3px;
+      background-color: #333;
+      margin: 6px 0;
+    }
+
+    nav.menu {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      background: #fff;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    nav.menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav.menu a:hover {
+      color: #00bcd4;
+    }
+
     @media (max-width: 768px) {
-      .projects {
-        grid-template-columns: 1fr;
+      .menu-btn {
+        display: block;
       }
 
       nav.menu {
+        display: none;
         flex-direction: column;
-        align-items: center;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+
+      nav.menu.active {
+        display: flex;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="work.html">Projects</a>
-      <a href="resume.html">Resume</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="menu-btn" onclick="toggleMenu()">
+    <div class="btn-line"></div>
+    <div class="btn-line"></div>
+    <div class="btn-line"></div>
+  </div>
 
-  <main>
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="work">
     <h1 class="lg-heading">
       My <span class="text-secondary">Projects</span>
     </h1>
     <h2 class="sm-heading">Check out some of my creations...</h2>
 
-    <section class="projects">
-      <!-- Project 1 -->
+    <div class="projects">
       <div class="item" data-aos="fade-up">
-        <img src="img/projects/Dice.jpg" alt="Dicee Game" />
-        <a class="btn-light"><i class="fas fa-eye"></i> Dicee Game</a>
+        <img src="img/projects/Dice.jpg" alt="Dicee game" />
+        <p class="btn-light"><i class="fas fa-eye"></i> Dicee Game</p>
         <a href="https://nidamirza9.github.io/Dicee_Game_Website/" target="_blank" class="btn-dark">View App</a>
       </div>
 
-      <!-- Project 2 -->
       <div class="item" data-aos="fade-up">
-        <img src="img/projects/project4.jpg" alt="Quiz App C" />
-        <a class="btn-light"><i class="fas fa-eye"></i> QuizAppC</a>
+        <img src="img/projects/project4.jpg" alt="QuizAppC" />
+        <p class="btn-light"><i class="fas fa-eye"></i> QuizAppC</p>
         <a href="https://nidamirza9.github.io/QuizAppC/" target="_blank" class="btn-dark">View Output</a>
       </div>
 
-      <!-- Project 3 -->
       <div class="item" data-aos="fade-up">
         <img src="img/projects/Dog1.jpg" alt="TinDog Website" />
-        <a class="btn-light"><i class="fas fa-eye"></i> TinDog</a>
+        <p class="btn-light"><i class="fas fa-eye"></i> TinDog</p>
         <a href="https://nidamirza9.github.io/TinDog_Website/" target="_blank" class="btn-dark">View App</a>
       </div>
 
-      <!-- Project 4 -->
       <div class="item" data-aos="fade-up">
-        <img src="img/projects/d1.jpeg" alt="Drum Kit Website" />
-        <a class="btn-light"><i class="fas fa-eye"></i> Drum Kit</a>
+        <img src="img/projects/d1.jpeg" alt="Drum kit Website" />
+        <p class="btn-light"><i class="fas fa-eye"></i> Drum Kit</p>
         <a href="https://nidamirza9.github.io/Drum_kit_website/" target="_blank" class="btn-dark">View App</a>
       </div>
 
-      <!-- Project 5 -->
       <div class="item" data-aos="fade-up">
         <img src="img/Harry.jpg" alt="Harry Potter Search" />
-        <a class="btn-light"><i class="fas fa-eye"></i> HP Character Finder</a>
+        <p class="btn-light"><i class="fas fa-eye"></i> HP Character Finder</p>
         <a href="https://nidamirza9.github.io/Harry_potter_Search/" target="_blank" class="btn-dark">View App</a>
       </div>
 
-      <!-- Project 6 -->
       <div class="item" data-aos="fade-up">
-        <img src="img/projects/project5.jpg" alt="Static Search Website" />
-        <a class="btn-light"><i class="fas fa-eye"></i> Static Search</a>
+        <img src="img/projects/project5.jpg" alt="Static Search" />
+        <p class="btn-light"><i class="fas fa-eye"></i> Static Search</p>
         <a href="https://nidamirza9.github.io/Static_search_website/" target="_blank" class="btn-dark">View App</a>
       </div>
 
-      <!-- Project 7 -->
       <div class="item" data-aos="fade-up">
-        <img src="img/projects/9.jpeg" alt="Web Programming Project" />
-        <a class="btn-light"><i class="fas fa-eye"></i> Web Programming</a>
+        <img src="img/projects/9.jpeg" alt="Web Programming" />
+        <p class="btn-light"><i class="fas fa-eye"></i> Web Programming</p>
         <a href="https://github.com/nidamirza9/WT" target="_blank" class="btn-dark">GitHub</a>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer>
-    &copy; 2025 Nida Mirza. All rights reserved.
+    &copy; 2025 Nida Mirza
   </footer>
 
   <script>
     AOS.init({ duration: 1000 });
+
+    function toggleMenu() {
+      const menu = document.querySelector('nav.menu');
+      menu.classList.toggle('active');
+    }
   </script>
 </body>
+
 </html>
