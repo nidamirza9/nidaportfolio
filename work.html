@@ -261,12 +261,14 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000 });
-
-    function toggleMenu() {
-      const menu = document.querySelector('nav.menu');
-      menu.classList.toggle('active');
-    }
+    AOS.init();
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+      menuBtn.classList.toggle('close');
+    });
+    
   </script>
 </body>
 </html>
