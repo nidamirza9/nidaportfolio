@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>About Me</title>
-    <style>
+ <style>
     body {
       margin: 0;
       padding: 0;
@@ -20,25 +20,41 @@
       background-color: #121212;
       color: #ffffff;
     }
-     .menu-btn {
+
+    /* Toggle Button */
+    .menu-btn {
       position: fixed;
       top: 2rem;
       right: 2rem;
       z-index: 2000;
-      cursor: pointer;
       display: flex;
       flex-direction: column;
       gap: 5px;
       background: transparent;
       border: none;
+      cursor: pointer;
     }
-.btn-line {
-  width: 25px;
-  height: 3px;
-  background-color: #fff; /* 👈 Fix applied */
-  transition: all 0.3s ease;
-}
 
+    .btn-line {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translateY(8px);
+    }
+
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translateY(-8px);
+    }
+
+    /* Navigation */
     nav.menu {
       position: fixed;
       top: 0;
@@ -55,6 +71,10 @@
       z-index: 1500;
     }
 
+    nav.menu.show {
+      right: 0;
+    }
+
     nav.menu a {
       font-size: 2rem;
       text-decoration: none;
@@ -65,10 +85,6 @@
 
     nav.menu a:hover {
       color: #e63946;
-    }
-
-    nav.menu.show {
-      right: 0;
     }
 
     @media (min-width: 768px) {
@@ -82,26 +98,17 @@
         height: auto;
         width: auto;
         background: none;
-        gap: 1rem;
         justify-content: flex-end;
         padding: 1rem 2rem;
+        gap: 1rem;
       }
 
       nav.menu a {
         font-size: 1.2rem;
       }
-    .menu-btn.close .btn-line:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
+    }
 
-.menu-btn.close .btn-line:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-btn.close .btn-line:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
-
+    /* About Section */
     #about {
       max-width: 1000px;
       margin: auto;
@@ -155,34 +162,29 @@
       margin-top: 1.5rem;
     }
 
-    #main-footer {
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    footer#main-footer {
       text-align: center;
       padding: 1rem;
       margin-top: 3rem;
       background-color: #000;
       color: #5eead4;
     }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    @media (min-width: 768px) {
-      .about-info {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 
 <body>
-  <!-- Toggle Menu Button -->
-<button class="menu-btn" id="menu-toggle" aria-label="Toggle Menu">
+  <!-- Toggle Menu -->
+  <button class="menu-btn" id="menu-toggle" aria-label="Toggle Navigation">
     <div class="btn-line"></div>
     <div class="btn-line"></div>
     <div class="btn-line"></div>
   </button>
 
+  <!-- Navigation -->
   <nav class="menu" id="menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -239,12 +241,14 @@
     &copy; 2025 Nida Mirza
   </footer>
 
-  <!-- Toggle Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
     const menuBtn = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
+
     menuBtn.addEventListener('click', () => {
       menu.classList.toggle('show');
       menuBtn.classList.toggle('close');
