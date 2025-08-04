@@ -250,14 +250,8 @@
   <!-- Scripts -->
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-
-    const menuBtn = document.querySelector('.menu-btn');
-    const menu = document.querySelector('.menu');
-
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
-      menuBtn.classList.toggle('close');
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('menu').classList.toggle('show');
     });
   </script>
 </body>
