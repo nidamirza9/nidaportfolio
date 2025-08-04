@@ -38,7 +38,7 @@
     .btn-line {
       width: 100%;
       height: 4px;
-      background-color: #000000;
+      background-color: #000;
       transition: all 0.3s ease;
     }
 
@@ -71,17 +71,6 @@
 
     .menu-btn.close .btn-line:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .menu a {
-      color: #5eead4;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .menu a:hover {
-      color: #ffffff;
     }
 
     .lg-heading {
@@ -187,13 +176,13 @@
 </head>
 <body>
   <!-- Toggle Menu Icon -->
- <button class="menu-btn" aria-label="Menu Toggle">
+<button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
     <div class="btn-line"></div>
     <div class="btn-line"></div>
     <div class="btn-line"></div>
   </button>
 
-  <nav class="menu">
+  <nav class="menu" id="menu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="work.html">Projects</a>
@@ -262,13 +251,15 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-    const menuBtn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
-      menuBtn.classList.toggle('close');
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("show");
+        menuBtn.classList.toggle("close");
+      });
     });
-    
   </script>
 </body>
 </html>
