@@ -20,25 +20,45 @@
       background-color: #121212;
       color: #ffffff;
     }
-
-    .menu-btn {
+      .menu-btn {
       position: fixed;
       top: 1rem;
       right: 1rem;
-      z-index: 1001;
+      width: 30px;
+      height: 25px;
       background: none;
       border: none;
-      cursor: pointer;
+      z-index: 1002;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      justify-content: space-between;
+      cursor: pointer;
     }
 
     .btn-line {
-      width: 30px;
+      width: 100%;
       height: 4px;
       background-color: #5eead4;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(11, 12, 16, 0.95);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      z-index: 1001;
+    }
+
+    .menu.show {
+      display: flex;
     }
 
     .menu-btn.close .btn-line:nth-child(1) {
@@ -50,34 +70,18 @@
     }
 
     .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    .menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #0b0c10;
-      width: 100%;
-      height: 100vh;
-      transform: translateX(-100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      transition: transform 0.3s ease-in-out;
-      z-index: 1000;
-    }
-
-    .menu.show {
-      transform: translateX(0);
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
     .menu a {
       color: #5eead4;
-      text-decoration: none;
       font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .menu a:hover {
+      color: #ffffff;
     }
 
     #about {
@@ -219,12 +223,13 @@
 
   <!-- Toggle Script -->
   <script>
-    const menuBtn = document.querySelector('.menu-btn');
-    const menu = document.querySelector('.menu');
-
+     AOS.init();
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
     menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('close');
       menu.classList.toggle('show');
+      menuBtn.classList.toggle('close');
+    });
     });
   </script>
 </body>
