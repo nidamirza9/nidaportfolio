@@ -32,13 +32,12 @@
       background: transparent;
       border: none;
     }
-
-    .btn-line {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-      transition: all 0.3s ease;
-    }
+.btn-line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff; /* 👈 Fix applied */
+  transition: all 0.3s ease;
+}
 
     nav.menu {
       position: fixed;
@@ -91,7 +90,18 @@
       nav.menu a {
         font-size: 1.2rem;
       }
-    }
+    .menu-btn.close .btn-line:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.close .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
     #about {
       max-width: 1000px;
       margin: auto;
