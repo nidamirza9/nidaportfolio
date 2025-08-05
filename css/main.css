@@ -10,7 +10,7 @@ body{ margin: 0;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   display: flex;
   justify-content: space-between; /* Logo left, menu toggle right */
   align-items: center;
@@ -19,8 +19,10 @@ body{ margin: 0;
 }
 
 .site-logo img {
-  height: 70px;
+  height: 55px;   /* Increased size */
   width: auto;
+  max-width: 180px; /* Ensures it doesn't get too large */
+  object-fit: contain; /* Keeps aspect ratio without distortion */
 }
 
     #about {
