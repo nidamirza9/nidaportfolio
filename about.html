@@ -13,37 +13,56 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>About Me</title>
  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #ffffff;
+      body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b0c10;
+      color: #fff;
+      line-height: 1.6;
     }
 
-    /* Toggle Button */
-    .menu-btn {
+      .menu-btn {
       position: fixed;
-      top: 2rem;
-      right: 2rem;
-      z-index: 2000;
+      top: 1rem;
+      right: 1rem;
+      width: 30px;
+      height: 25px;
+      background: none;
+      border: none;
+      z-index: 1002;
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      background: transparent;
-      border: none;
+      justify-content: space-between;
       cursor: pointer;
     }
 
     .btn-line {
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
+      width: 100%;
+      height: 4px;
+      background-color: #5eead4;
       transition: all 0.3s ease;
     }
 
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(11, 12, 16, 0.95);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      z-index: 1001;
+    }
+
+    .menu.show {
+      display: flex;
+    }
+
     .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translateY(8px);
+      transform: rotate(45deg) translate(5px, 5px);
     }
 
     .menu-btn.close .btn-line:nth-child(2) {
@@ -51,62 +70,19 @@
     }
 
     .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translateY(-8px);
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Navigation */
-    nav.menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      height: 100%;
-      width: 100%;
-      background-color: #f9f9f9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      transition: right 0.4s ease;
-      z-index: 1500;
-    }
-
-    nav.menu.show {
-      right: 0;
-    }
-
-    nav.menu a {
-      font-size: 2rem;
+    .menu a {
+      color: #5eead4;
+      font-size: 1.5rem;
       text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
-    nav.menu a:hover {
-      color: #e63946;
+    .menu a:hover {
+      color: #ffffff;
     }
-
-  .menu-btn {
-  display: flex !important;
-}
-
-      nav.menu {
-        position: static;
-        flex-direction: row;
-        height: auto;
-        width: auto;
-        background: none;
-        justify-content: flex-end;
-        padding: 1rem 2rem;
-        gap: 1rem;
-      }
-
-      nav.menu a {
-        font-size: 1.2rem;
-      }
-    }
-
     /* About Section */
     #about {
       max-width: 1000px;
@@ -176,22 +152,21 @@
 </head>
 
 <body>
-  <!-- Toggle Menu -->
-  <button class="menu-btn" id="menu-toggle" aria-label="Toggle Navigation">
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-  </button>
+<!-- Toggle Button -->
+<button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+</button>
 
-  <!-- Navigation -->
-  <nav class="menu" id="menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="work.html">Projects</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
+<!-- Navigation -->
+<nav class="menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="work.html">Projects</a>
+  <a href="resume.html">Resume</a>
+  <a href="contact.html">Contact</a>
+</nav>
   <!-- About Section -->
   <section id="about">
     <h1 class="lg-heading">About Me</h1>
@@ -241,17 +216,16 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+  AOS.init();
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
 
-    const menuBtn = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
-      menuBtn.classList.toggle('close');
-    });
-  </script>
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    menuBtn.classList.toggle('close');
+  });
+</script>
 </body>
 </html>
