@@ -210,20 +210,21 @@ SSSssshhhhh!! The code starts below, Enjoy!!! -->
 </head>
 
 <body>
-  <!-- Toggle Button -->
- <button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-  </button>
+<!-- Toggle Button -->
+<button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+</button>
 
-  <nav class="menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="work.html">Projects</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<!-- Navigation -->
+<nav class="menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="work.html">Projects</a>
+  <a href="resume.html">Resume</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
   <!-- Main Content -->
   <main id="home">
@@ -243,15 +244,16 @@ SSSssshhhhh!! The code starts below, Enjoy!!! -->
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    const menuBtn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
-      menuBtn.classList.toggle('close');
-    });
-  </script>
+ <script>
+  AOS.init();
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    menuBtn.classList.toggle('close');
+  });
+</script>
      
 </body>
 </html>
