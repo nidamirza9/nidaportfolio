@@ -174,20 +174,22 @@
   </style>
 </head>
 <body>
-  <!-- Toggle Menu Icon -->
-<button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-  </button>
 
-  <nav class="menu" id="menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="work.html">Projects</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<!-- Toggle Button -->
+<button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+  <div class="btn-line"></div>
+</button>
+
+<!-- Navigation -->
+<nav class="menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="work.html">Projects</a>
+  <a href="resume.html">Resume</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
   <!-- Main Content -->
   <main id="work">
@@ -250,7 +252,6 @@
  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
-
   const menuBtn = document.getElementById('menu-btn');
   const menu = document.getElementById('menu');
 
