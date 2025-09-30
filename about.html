@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="css/main.css" /> 
-    <link rel="icon" href="img/projects/Logo Favicon.png" sizes="20x20">
-    <title>About Me</title>
- <style>
-      body {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" href="img/projects/Logo Favicon.png" sizes="20x20">
+  <title>About Me</title>
+  <style>
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0b0c10;
       color: #fff;
       line-height: 1.6;
     }
 
-      .menu-btn {
+    .menu-btn {
       position: fixed;
       top: 1rem;
       right: 1rem;
@@ -84,6 +83,7 @@
     .menu a:hover {
       color: #ffffff;
     }
+
     /* About Section */
     #about {
       max-width: 1000px;
@@ -111,15 +111,9 @@
       gap: 2rem;
     }
 
-    .bio-image {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #5eead4;
-    }
-
-    .bio, .job {
+    /* Removed bio-image, content remains centered */
+    .bio,
+    .job {
       background: #1e1e1e;
       padding: 1.5rem;
       border-radius: 15px;
@@ -128,9 +122,11 @@
       width: 100%;
     }
 
-    .bio h3, .job h3 {
+    .bio h3,
+    .job h3 {
       color: #5eead4;
       margin-bottom: 1rem;
+      text-align: center;
     }
 
     .job h4 {
@@ -153,39 +149,43 @@
 </head>
 
 <body>
-<!-- Header with Logo + Toggle -->
-<header class="site-header">
+  <!-- Header with Logo + Toggle -->
+  <header class="site-header">
     <a href="index.html" class="site-logo">
-        <img src="img/projects/Portfolio Logo.png" alt="Nida Mirza Logo">
+      <img src="img/projects/Portfolio Logo.png" alt="Nida Mirza Logo">
     </a>
     <button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
     </button>
-</header>
+  </header>
 
-<!-- Navigation -->
-<nav class="menu" id="menu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="work.html">Projects</a>
-  <a href="resume.html">Resume</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <!-- About Section -->
   <section id="about">
     <h1 class="lg-heading">About Me</h1>
     <p class="sm-heading">Few things about me...</p>
 
     <div class="about-info">
-      <img src="img/projects/Nida - DP.jpg" alt="Nida Mirza Headshot" class="bio-image" />
+      <!-- Removed Headshot Image -->
 
       <div class="bio">
         <h3>BIO</h3>
         <p>
-          Results-driven QA Engineer with 3+ years of hands-on experience in manual testing, SDLC/STLC processes, and Sitecore-based web platforms. ISTQB certified and highly skilled in functional, UI/UX, regression, cross-browser, and accessibility testing.
-          Passionate about continuous learning—currently exploring Generative AI and expanding automation expertise with Selenium and TestNG.
+          Results-driven QA Engineer with 3+ years of hands-on experience in manual testing, SDLC/STLC processes, and
+          Sitecore-based web platforms. ISTQB certified and highly skilled in functional, UI/UX, regression,
+          cross-browser, and accessibility testing.
+          Passionate about continuous learning—currently exploring Generative AI and expanding automation expertise with
+          Selenium and TestNG.
         </p>
       </div>
 
@@ -194,10 +194,11 @@
 
         <h4>Horizontal Digital – QA Engineer (Jan 2024 – Present)</h4>
         <ul>
-          <li>Cross-browser testing for Sitecore CMS-based enterprise websites.</li>
+          <li>Driving QA efforts on projects for clients in diverse regions including the US, UK, Dubai, and Saudi Arabia.</li>
           <li>Active collaboration in Agile ceremonies and releases.</li>
           <li>Executed A/B testing and CRO improvements.</li>
           <li>Learning Selenium, TestNG, and mentoring juniors.</li>
+          <li>Exploring AI tools to enhance testing and productivity.</li>
         </ul>
 
         <h4>Associate QA Engineer (Jun 2022 – Dec 2023)</h4>
@@ -222,16 +223,17 @@
   </footer>
 
   <!-- Scripts -->
-   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
- <script>
-  AOS.init();
-  const menuBtn = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
 
-  menuBtn.addEventListener('click', () => {
-    menu.classList.toggle('show');
-    menuBtn.classList.toggle('close');
-  });
-</script>
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+      menuBtn.classList.toggle('close');
+    });
+  </script>
 </body>
+
 </html>
