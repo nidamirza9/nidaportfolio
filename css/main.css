@@ -159,6 +159,7 @@ a:hover { color: #0a3340; }
   padding: 56px 0 40px;
 }
 .hero-panel {
+  width: 100%;
   padding: 36px 34px 32px;
   border-radius: 20px;
   background:
