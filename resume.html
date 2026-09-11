@@ -1,192 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="icon" href="img/projects/Logo Favicon.png" sizes="20x20">
-    <title>Nida Mirza</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume of Nida Mirza — QA Engineer.">
+  <title>Resume | Nida Mirza</title>
+  <link rel="icon" href="img/brand/nida-logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
-
-<style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: #121212;
-      font-family: 'Segoe UI', sans-serif;
-      color: #ffffff;
-      scroll-behavior: smooth;
-    }
-
-    .menu-btn {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      width: 30px;
-      height: 25px;
-      background: none;
-      border: none;
-      z-index: 1002;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-
-    .btn-line {
-      width: 100%;
-      height: 4px;
-      background-color: #5eead4;
-      transition: all 0.3s ease;
-    }
-
-    .menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: rgba(11, 12, 16, 0.95);
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      z-index: 1001;
-    }
-
-    .menu.show {
-      display: flex;
-    }
-
-    .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-btn.close .btn-line:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .menu a {
-      color: #5eead4;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .menu a:hover {
-      color: #ffffff;
-    }
-
-    main#resume {
-      padding: 3rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .lg-heading {
-      font-size: 2.5rem;
-      color: #5eead4;
-      margin-bottom: 1rem;
-    }
-
-    .resume-frame iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(94, 234, 212, 0.15);
-      margin-bottom: 2rem;
-    }
-
-    .download {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #5eead4;
-      color: #121212;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .download:hover {
-      background-color: #3ad9c3;
-    }
-
-    footer#main-footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 1rem;
-      background-color: #000;
-      color: #5eead4;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-
 <body>
-<!-- Header with Logo + Toggle -->
-<header class="site-header">
-  <!-- Logo -->
-  <a href="index.html" class="site-logo">
-    <img src="img/projects/Portfolio Logo.png" alt="Nida Mirza Logo">
-  </a>
-
-  <!-- Toggle Button -->
-  <button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-    <div class="btn-line"></div>
-  </button>
-</header>
-
-  <nav class="menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="work.html">Projects</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <main id="resume">
-    <h1 class="lg-heading" data-aos="fade-down">My <span class="text-secondary">Resume</span></h1>
-    <div class="resume-frame" data-aos="zoom-in-up" data-aos-delay="300">
-      <iframe src="https://drive.google.com/file/d/1cRKhVQGQjVpzepq7allFwzpjNeBbgg6I/preview"></iframe>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="header-brand" href="index.html">
+        <span class="header-logo-wrap"><img src="img/brand/nida-logo.png" alt="" width="44" height="44"></span>
+        <span>
+          <strong>Nida Mirza</strong>
+          <em>QA Engineer | ISTQB Certified</em>
+        </span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="header-links" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Projects</a>
+        <a class="active" href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+        <a class="header-ext" href="https://www.linkedin.com/in/nida-mirza/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
     </div>
-    <a href="Resume.pdf" class="download" download data-aos="fade-up" data-aos-delay="500">Download</a>
+  </header>
+
+  <main id="main" class="wrap section">
+    <div class="section-head">
+      <div>
+        <h1 style="font-family:var(--display);font-size:clamp(32px,4vw,44px);margin:0 0 8px">Resume</h1>
+        <p class="section-intro">Current experience, projects, skills, and education — same story as my training About page, kept easy to scan.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn solid" href="mailto:mirzanida58@gmail.com">Email</a>
+        <a class="btn ghost" href="https://github.com/nidamirza9" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    <section class="reveal" style="margin-bottom:28px">
+      <h2>Professional summary</h2>
+      <p>ISTQB-certified QA Engineer with 4.5+ years testing scalable, user-facing web applications in Agile/Scrum for US, UK, and UAE clients. Hands-on with Selenium WebDriver, TestNG, Postman, Apache JMeter, WCAG accessibility, and AI-assisted QA tooling (Claude AI, Cursor).</p>
+    </section>
+
+    <section class="reveal" style="margin-bottom:28px">
+      <h2>Professional experience</h2>
+      <article class="job">
+        <header>
+          <h3>QA Engineer — Horizontal Digital</h3>
+          <p class="job-dates">Jan 2024 – Present</p>
+        </header>
+        <ul>
+          <li>Collaborate within Agile teams on requirement reviews, sprint planning, and retrospectives.</li>
+          <li>Execute end-to-end website QA and document defects using industry-standard tracking tools.</li>
+          <li>Introduced Selenium WebDriver automation, reducing regression testing time by 20%.</li>
+          <li>Led 10+ training programs and partnered with clients across the US, UAE, and UK.</li>
+        </ul>
+      </article>
+      <article class="job">
+        <header>
+          <h3>Associate QA Engineer — Horizontal Digital</h3>
+          <p class="job-dates">Jun 2022 – Dec 2023</p>
+        </header>
+        <ul>
+          <li>Manual and automated testing for large-scale projects, including Cadence Bank.</li>
+          <li>Led WCAG accessibility testing and Sitecore personalization testing.</li>
+          <li>Logged 100+ defects in JIRA, contributing to a 15% reduction in post-release bugs.</li>
+        </ul>
+      </article>
+      <article class="job">
+        <header>
+          <h3>QA Intern — Horizontal Digital</h3>
+          <p class="job-dates">Jan 2022 – Jun 2022</p>
+        </header>
+        <ul>
+          <li>Supported manual testing, defect tracking, and documentation using JIRA and QMetry.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="reveal" style="margin-bottom:28px">
+      <h2>Featured projects</h2>
+      <ul>
+        <li><strong>Contentstack QA Training</strong> — <a href="https://contentstack-qa-training.vercel.app/" target="_blank" rel="noopener noreferrer">Live</a></li>
+        <li><strong>Tutorials Ninja Hybrid Framework</strong> — Java, Selenium, TestNG, Maven — <a href="https://github.com/nidamirza9/tutorialsninjaHybridFramework" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><strong>AI QA Extensions</strong> — redirection, SEO, UI compare, Cursor demo — see <a href="work.html">Projects</a></li>
+      </ul>
+    </section>
+
+    <section class="reveal" style="margin-bottom:28px">
+      <h2>Core skills</h2>
+      <div class="skills-grid">
+        <div class="skill-block"><h3>Testing</h3><p>Manual, Regression, Smoke &amp; Sanity, Functional, E2E, UAT, Cross-Browser, Cross-Platform</p></div>
+        <div class="skill-block"><h3>Automation &amp; API</h3><p>Selenium WebDriver, TestNG, Maven, POM, Data-Driven Testing, Postman</p></div>
+        <div class="skill-block"><h3>Performance &amp; AI</h3><p>Apache JMeter, Claude AI, Cursor</p></div>
+        <div class="skill-block"><h3>Tools &amp; languages</h3><p>JIRA, Confluence, QMetry, Sitecore, Contentstack, Git, Jenkins, Java, Python, HTML/CSS/JS</p></div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <h2>Education, certifications &amp; achievements</h2>
+      <p><strong>Computer Engineering (BE)</strong> — Madhuben &amp; Bhanubhai Patel Institute of Technology | 2018–2022 | CGPA 9.02/10</p>
+      <p>ISTQB Foundation Level | Python for Data Science (University of Michigan) | Java (HackerRank) | Generative AI (Google)</p>
+      <ul>
+        <li>“Raise the BAR Award” for defect identification and mentoring excellence</li>
+        <li>Mentored 20+ ISTQB aspirants with a 100% first-attempt pass rate</li>
+      </ul>
+      <p style="margin-top:16px"><a href="Nida_Manual_Automation_3_Years.pdf">Download PDF resume</a></p>
+    </section>
   </main>
 
-  <footer id="main-footer">
-    © 2025 Nida Mirza | All rights reserved
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo-wrap"><img src="img/brand/nida-logo.png" alt="Nida Mirza logo" width="56" height="56"></span>
+        <div>
+          <strong>Nida Mirza</strong>
+          <p>ISTQB-certified QA Engineer | Manual &amp; Automation | AI-Assisted QA</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="work.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 Nida Mirza. All rights reserved.</p>
+    </div>
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    const menuBtn = document.querySelector('.menu-btn');
-    const menu = document.querySelector('.menu');
-
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
-      menuBtn.classList.toggle('close');
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>

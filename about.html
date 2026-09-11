@@ -1,239 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="icon" href="img/projects/Logo Favicon.png" sizes="20x20">
-  <title>About Me</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0b0c10;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    .menu-btn {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      width: 30px;
-      height: 25px;
-      background: none;
-      border: none;
-      z-index: 1002;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-
-    .btn-line {
-      width: 100%;
-      height: 4px;
-      background-color: #5eead4;
-      transition: all 0.3s ease;
-    }
-
-    .menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: rgba(11, 12, 16, 0.95);
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      z-index: 1001;
-    }
-
-    .menu.show {
-      display: flex;
-    }
-
-    .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-btn.close .btn-line:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .menu a {
-      color: #5eead4;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .menu a:hover {
-      color: #ffffff;
-    }
-
-    /* About Section */
-    #about {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    .lg-heading {
-      font-size: 3rem;
-      text-align: center;
-      color: #5eead4;
-    }
-
-    .sm-heading {
-      font-size: 1.5rem;
-      text-align: center;
-      color: #aaa;
-      margin-bottom: 2rem;
-    }
-
-    .about-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    /* Removed bio-image, content remains centered */
-    .bio,
-    .job {
-      background: #1e1e1e;
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(94, 234, 212, 0.3);
-      max-width: 800px;
-      width: 100%;
-    }
-
-    .bio h3,
-    .job h3 {
-      color: #5eead4;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .job h4 {
-      color: #a2d2ff;
-      margin-top: 1.5rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    footer#main-footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-      background-color: #000;
-      color: #5eead4;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Nida Mirza — ISTQB-certified QA Engineer.">
+  <title>About | Nida Mirza</title>
+  <link rel="icon" href="img/brand/nida-logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
-  <!-- Header with Logo + Toggle -->
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a href="index.html" class="site-logo">
-      <img src="img/projects/Portfolio Logo.png" alt="Nida Mirza Logo">
-    </a>
-    <button class="menu-btn" id="menu-btn" aria-label="Menu Toggle">
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-    </button>
+    <div class="header-inner">
+      <a class="header-brand" href="index.html">
+        <span class="header-logo-wrap"><img src="img/brand/nida-logo.png" alt="" width="44" height="44"></span>
+        <span>
+          <strong>Nida Mirza</strong>
+          <em>QA Engineer | ISTQB Certified</em>
+        </span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="header-links" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="active" href="about.html">About</a>
+        <a href="work.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+        <a class="header-ext" href="https://www.linkedin.com/in/nida-mirza/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="menu" id="menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="work.html">Projects</a>
-    <a href="resume.html">Resume</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <!-- About Section -->
-  <section id="about">
-    <h1 class="lg-heading">About Me</h1>
-    <p class="sm-heading">Few things about me...</p>
-
-    <div class="about-info">
-      <!-- Removed Headshot Image -->
-
-      <div class="bio">
-        <h3>BIO</h3>
-        <p>
-          Results-driven QA Engineer with 3+ years of hands-on experience in manual testing, SDLC/STLC processes, and
-          Sitecore-based web platforms. ISTQB certified and highly skilled in functional, UI/UX, regression,
-          cross-browser, and accessibility testing.
-          Passionate about continuous learning—currently exploring Generative AI and expanding automation expertise with
-          Selenium and TestNG.
-        </p>
-      </div>
-
-      <div class="job">
-        <h3>Technical Positions of Responsibility</h3>
-
-        <h4>Horizontal Digital – QA Engineer (Jan 2024 – Present)</h4>
-        <ul>
-          <li>Driving QA efforts on projects for clients in diverse regions including the US, UK, Dubai, and Saudi Arabia.</li>
-          <li>Active collaboration in Agile ceremonies and releases.</li>
-          <li>Executed A/B testing and CRO improvements.</li>
-          <li>Learning Selenium, TestNG, and mentoring juniors.</li>
-          <li>Exploring AI tools to enhance testing and productivity.</li>
-        </ul>
-
-        <h4>Associate QA Engineer (Jun 2022 – Dec 2023)</h4>
-        <ul>
-          <li>Functional and cross-platform manual testing for banking projects.</li>
-          <li>Bug tracking and reporting via JIRA.</li>
-          <li>Improved accessibility testing and test documentation.</li>
-        </ul>
-
-        <h4>QA Intern (Jan 2022 – Jun 2022)</h4>
-        <ul>
-          <li>Trained in testing processes, JIRA, and Sitecore CMS.</li>
-          <li>Supported internal project QA and defect validation.</li>
-        </ul>
-      </div>
+  <main id="main" class="wrap section">
+    <p class="eyebrow" style="color:var(--accent)">About</p>
+    <h1 style="font-family:var(--display);font-size:clamp(32px,4vw,44px);margin:0 0 12px">Nida Mirza</h1>
+    <p style="font-size:17px;font-weight:600;color:var(--accent);margin:0 0 18px">QA Engineer | Manual &amp; Automation Testing | Selenium | API &amp; Performance Testing | AI-Assisted QA</p>
+    <div class="prose reveal">
+      <p>ISTQB-certified QA Engineer with 4.5+ years testing scalable, user-facing web applications in Agile/Scrum environments for global clients across the US, UK, and UAE.</p>
+      <p>Skilled in manual, API, cross-browser, accessibility (WCAG), and performance testing, with hands-on automation using Selenium WebDriver and TestNG and load testing using Apache JMeter.</p>
+      <p>I build custom QA tools with Claude AI and Cursor to speed up testing and improve accuracy — cutting regression cycles and post-release defects. AI tooling has helped reduce workload by about 25% and fasten testing processes.</p>
+      <p>I also mentor ISTQB aspirants (20+, 100% first-attempt pass rate) and publish practical training like the Contentstack QA Training site.</p>
     </div>
-  </section>
+    <div class="hero-actions" style="margin-top:22px">
+      <a class="btn solid" href="resume.html">Full resume</a>
+      <a class="btn ghost" href="work.html">Projects</a>
+      <a class="btn ghost" href="mailto:mirzanida58@gmail.com">Email</a>
+    </div>
+  </main>
 
-  <!-- Footer -->
-  <footer id="main-footer">
-    &copy; 2025 Nida Mirza
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo-wrap"><img src="img/brand/nida-logo.png" alt="Nida Mirza logo" width="56" height="56"></span>
+        <div>
+          <strong>Nida Mirza</strong>
+          <p>ISTQB-certified QA Engineer | Manual &amp; Automation | AI-Assisted QA</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="work.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 Nida Mirza. All rights reserved.</p>
+    </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    const menuBtn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('show');
-      menuBtn.classList.toggle('close');
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>
